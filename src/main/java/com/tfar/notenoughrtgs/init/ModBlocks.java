@@ -2,6 +2,7 @@ package com.tfar.notenoughrtgs.init;
 
 import com.tfar.notenoughrtgs.block.BlockBase;
 
+import nc.block.NCBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
