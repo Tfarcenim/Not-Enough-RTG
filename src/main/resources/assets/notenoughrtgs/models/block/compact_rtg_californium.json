@@ -1,0 +1,8 @@
+
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "notenoughrtgs:blocks/compact_rtg_californium_top",
+    "side": "notenoughrtgs:blocks/compact_rtg_californium_side"
+  }
+}
