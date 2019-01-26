@@ -1,7 +1,6 @@
 package com.tfar.notenoughrtgs.block.tile;
 
 import com.tfar.notenoughrtgs.block.BlockBase;
-import com.tfar.notenoughrtgs.tile.generator.RTGTile;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
