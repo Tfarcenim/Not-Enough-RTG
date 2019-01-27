@@ -21,9 +21,9 @@ public class Main {
     public static Logger logger;
 
     @EventHandler
-    public static void PreInit(FMLPreInitializationEvent event) {
+    public static void PreInit(FMLPreInitializationEvent event) {        ModTiles.register();}
 
-    }
+
     @EventHandler
     public static void init(FMLInitializationEvent event) {
 
