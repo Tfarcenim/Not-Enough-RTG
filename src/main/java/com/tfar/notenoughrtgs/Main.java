@@ -22,7 +22,7 @@ public class Main {
 
     @EventHandler
     public static void PreInit(FMLPreInitializationEvent event) {
-        ModTiles.register();
+
     }
     @EventHandler
     public static void init(FMLInitializationEvent event) {
