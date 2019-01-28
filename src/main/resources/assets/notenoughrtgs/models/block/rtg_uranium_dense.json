@@ -1,0 +1,8 @@
+
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "notenoughrtgs:blocks/rtg_uranium_dense_top",
+    "side": "notenoughrtgs:blocks/rtg_uranium_dense_side"
+  }
+}

@@ -1,0 +1,21 @@
+{"type": "minecraft:crafting_shaped",
+"pattern": [
+"iii",
+"ibi",
+"iii"
+],
+"key": {
+"i": {
+"item": "notenoughrtgs:rtg_uranium_compact"
+},
+  "b": {
+    "type": "forge:ore_dict",
+    "ore":"ingotGold"
+  }
+},
+"result": {
+"item": "notenoughrtgs:rtg_uranium_dense",
+"count": 1
+
+}
+}

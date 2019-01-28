@@ -1,0 +1,21 @@
+{"type": "minecraft:crafting_shaped",
+"pattern": [
+"iii",
+"ibi",
+"iii"
+],
+"key": {
+"i": {
+"item": "notenoughrtgs:rtg_americium_compact"
+},
+  "b": {
+    "type": "forge:ore_dict",
+    "ore":"ingotGold"
+  }
+},
+"result": {
+"item": "notenoughrtgs:rtg_americium_dense",
+"count": 1
+
+}
+}

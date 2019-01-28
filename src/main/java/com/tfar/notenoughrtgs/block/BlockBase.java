@@ -18,6 +18,9 @@ public class BlockBase extends Block implements IHasModel {
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        setHarvestLevel("pickaxe", 0);
+        setHardness(2F);
+        setResistance(15F);
     }
 
 

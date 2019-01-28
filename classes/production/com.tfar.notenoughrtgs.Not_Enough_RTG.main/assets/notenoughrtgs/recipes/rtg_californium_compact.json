@@ -1,0 +1,21 @@
+{"type": "minecraft:crafting_shaped",
+"pattern": [
+"iii",
+"ibi",
+"iii"
+],
+"key": {
+"i": {
+"item": "nuclearcraft:rtg_californium"
+},
+  "b": {
+    "type": "forge:ore_dict",
+    "ore":"ingotBronze"
+  }
+},
+"result": {
+"item": "notenoughrtgs:rtg_californium_compact",
+"count": 1
+
+}
+}

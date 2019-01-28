@@ -1,0 +1,21 @@
+{"type": "minecraft:crafting_shaped",
+"pattern": [
+"iii",
+"ibi",
+"iii"
+],
+"key": {
+"i": {
+"item": "notenoughrtgs:rtg_californium_compact"
+},
+  "b": {
+    "type": "forge:ore_dict",
+    "ore":"ingotGold"
+  }
+},
+"result": {
+"item": "notenoughrtgs:rtg_californium_dense",
+"count": 1
+
+}
+}
