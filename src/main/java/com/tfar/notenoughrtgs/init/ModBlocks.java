@@ -4,6 +4,11 @@ package com.tfar.notenoughrtgs.init;
 import com.tfar.notenoughrtgs.block.tile.BlockTile;
 import com.tfar.notenoughrtgs.tile.generator.TileRTGCompact;
 import com.tfar.notenoughrtgs.tile.generator.TileRTGDense;
+import nc.block.item.ItemBlockMeta;
+import nc.config.NCConfig;
+import nc.enumm.MetaEnums;
+import nc.util.InfoHelper;
+import nc.util.UnitHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
@@ -11,6 +16,8 @@ import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static nc.init.NCBlocks.*;
 
 public class ModBlocks {
     public static final List<Block> BLOCKS = new ArrayList<Block>();
@@ -74,6 +81,8 @@ public class ModBlocks {
 
 
 
-    public static void register() {
+    public static void register() {		registerBlock(ore, new ItemBlockMeta(ore, MetaEnums.OreType.class));
+        registerBlock(DENSE_RTG_URANIUM, InfoHelper.formattedInfo("rtg", UnitHelper.prefix(NCConfig.rtg_power[0]*64, 5, "RF/t")));
+
     }
 }

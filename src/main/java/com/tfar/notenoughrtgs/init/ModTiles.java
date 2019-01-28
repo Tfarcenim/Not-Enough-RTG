@@ -3,11 +3,16 @@ package com.tfar.notenoughrtgs.init;
 
 import com.tfar.notenoughrtgs.tile.generator.TileRTGCompact;
 import com.tfar.notenoughrtgs.tile.generator.TileRTGDense;
-import com.tfar.notenoughrtgs.util.InfoHelper;
 import com.tfar.notenoughrtgs.util.reference;
 import nc.config.NCConfig;
+import nc.util.InfoHelper;
 import nc.util.UnitHelper;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.List;
+
+import static nc.util.InfoHelper.infoLine;
 
 
 public class ModTiles {	public static void register() {
@@ -21,6 +26,8 @@ public class ModTiles {	public static void register() {
     GameRegistry.registerTileEntity(TileRTGDense.CaliforniumDense.class, reference.MOD_ID + ":rtg_californium_dense");
 }
 
-
     }
+
+
+
 
