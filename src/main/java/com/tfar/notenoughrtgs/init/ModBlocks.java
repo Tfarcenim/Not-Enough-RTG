@@ -7,6 +7,7 @@ import com.tfar.notenoughrtgs.tile.generator.TileRTGDense;
 import nc.block.item.ItemBlockMeta;
 import nc.config.NCConfig;
 import nc.enumm.MetaEnums;
+import nc.init.NCBlocks;
 import nc.util.InfoHelper;
 import nc.util.UnitHelper;
 import net.minecraft.block.Block;
@@ -17,7 +18,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.List;
 
-import static nc.init.NCBlocks.*;
+import static nc.init.NCBlocks.registerBlock;
 
 public class ModBlocks {
     public static final List<Block> BLOCKS = new ArrayList<Block>();
@@ -44,13 +45,14 @@ public class ModBlocks {
     };
     public static final Block COMPACT_RTG_CALIFORNIUM = new BlockTile("rtg_californium_compact", Material.IRON) {
 
-      //  InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[3], 5, "RF/t"))
+
         @Override
         public TileEntity createNewTileEntity(World worldIn, int meta) {
             return new TileRTGCompact.CaliforniumCompact();
         }
     };
     public static final Block DENSE_RTG_URANIUM = new BlockTile("rtg_uranium_dense", Material.IRON) {
+
 
         @Override
         public TileEntity createNewTileEntity(World worldIn, int meta) {
@@ -81,8 +83,9 @@ public class ModBlocks {
 
 
 
-    public static void register() {		registerBlock(ore, new ItemBlockMeta(ore, MetaEnums.OreType.class));
-        registerBlock(DENSE_RTG_URANIUM, InfoHelper.formattedInfo("rtg", UnitHelper.prefix(NCConfig.rtg_power[0]*64, 5, "RF/t")));
+    public static void register() {		registerBlock(DENSE_RTG_URANIUM, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[0], 5, "RF/t")));
+
+
 
     }
 }
