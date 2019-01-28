@@ -83,7 +83,7 @@ public class ModBlocks {
 
 
 
-    public static void register() {		registerBlock(DENSE_RTG_URANIUM, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[0], 5, "RF/t")));
+    public static void register() {		registerBlock(DENSE_RTG_URANIUM, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[0]*64, 5, "RF/t")));
 
 
 
