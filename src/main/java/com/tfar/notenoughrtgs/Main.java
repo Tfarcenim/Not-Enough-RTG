@@ -20,7 +20,7 @@ public class Main {
     public static Logger logger;
 
     @EventHandler
-    public static void PreInit(FMLPreInitializationEvent event) {}
+    public void PreInit(FMLPreInitializationEvent preEvent) {		proxy.preInit(preEvent);}
 
 
     @EventHandler
