@@ -1,8 +1,6 @@
 package com.tfar.notenoughrtgs.block.tile;
 
-import com.tfar.notenoughrtgs.block.BlockBase;
-import com.tfar.notenoughrtgs.init.ModTiles;
-import com.tfar.notenoughrtgs.tile.generator.TileRTGCompact;
+import com.tfar.notenoughrtgs.block.RTGBase;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -14,7 +12,7 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public abstract class BlockTile extends BlockBase implements ITileEntityProvider {
+public abstract class BlockTile extends RTGBase implements ITileEntityProvider {
 
 
     public BlockTile(String name, Material material) {

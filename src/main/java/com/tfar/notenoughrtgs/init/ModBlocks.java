@@ -1,91 +1,120 @@
 package com.tfar.notenoughrtgs.init;
 
 
-import com.tfar.notenoughrtgs.block.tile.BlockTile;
-import com.tfar.notenoughrtgs.tile.generator.TileRTGCompact;
-import com.tfar.notenoughrtgs.tile.generator.TileRTGDense;
-import nc.block.item.ItemBlockMeta;
+import com.tfar.notenoughrtgs.block.item.ItemBlocks;
+import com.tfar.notenoughrtgs.block.tile.BlockSimpleTile;
 import nc.config.NCConfig;
-import nc.enumm.MetaEnums;
-import nc.init.NCBlocks;
+
+
+import com.tfar.notenoughrtgs.enums.BlockEnums.SimpleTileType;
+
 import nc.util.InfoHelper;
 import nc.util.UnitHelper;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
+import com.tfar.notenoughrtgs.util.reference;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static nc.init.NCBlocks.registerBlock;
+import static net.minecraftforge.fml.common.registry.ForgeRegistries.BLOCKS;
 
 public class ModBlocks {
-    public static final List<Block> BLOCKS = new ArrayList<Block>();
-
-    public static final Block COMPACT_RTG_URANIUM = new BlockTile("rtg_uranium_compact", Material.IRON) {
-
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGCompact.UraniumCompact();
-        }
-    };
-    public static final Block COMPACT_RTG_AMERICIUM = new BlockTile("rtg_americium_compact", Material.IRON) {
-
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGCompact.AmericiumCompact();
-        }
-    };
-    public static final Block COMPACT_RTG_PLUTONIUM = new BlockTile("rtg_plutonium_compact", Material.IRON) {
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGCompact.PlutoniumCompact();
-        }
-    };
-    public static final Block COMPACT_RTG_CALIFORNIUM = new BlockTile("rtg_californium_compact", Material.IRON) {
 
 
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGCompact.CaliforniumCompact();
-        }
-    };
-    public static final Block DENSE_RTG_URANIUM = new BlockTile("rtg_uranium_dense", Material.IRON) {
+    public static Block rtg_uranium_compact;
+ /*   public static Block rtg_plutonium_compact;
+    public static Block rtg_americium_compact;
+    public static Block rtg_californium_compact;
+
+    public static Block rtg_uranium_dense;
+    public static Block rtg_plutonium_dense;
+    public static Block rtg_americium_dense;
+    public static Block rtg_californium_dense; */
 
 
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGDense.UraniumDense();
-        }
-    };
-    public static final Block DENSE_RTG_AMERICIUM = new BlockTile("rtg_americium_dense", Material.IRON) {
+    //public static Block spin;
 
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGDense.AmericiumDense();
-        }
-    };
-    public static final Block DENSE_RTG_PLUTONIUM = new BlockTile("rtg_plutonium_dense", Material.IRON) {
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGDense.PlutoniumDense();
-        }
-    };
-    public static final Block DENSE_RTG_CALIFORNIUM = new BlockTile("rtg_californium_dense", Material.IRON) {
+    public static void init() {
 
-        //  InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[3], 5, "RF/t"))
-        @Override
-        public TileEntity createNewTileEntity(World worldIn, int meta) {
-            return new TileRTGDense.CaliforniumDense();
-        }
-    };
+        rtg_uranium_compact = new BlockSimpleTile(SimpleTileType.RTG_URANIUM_COMPACT);
+        /*        rtg_plutonium_compact = new BlockSimpleTile(SimpleTileType.);
+        rtg_americium_compact = new BlockSimpleTile(SimpleTileType.RTG_AMERICIUM_COMPACT);
+        rtg_californium_compact = new BlockSimpleTile(SimpleTileType.RTG_CALIFORNIUM_COMPACT);
 
 
 
-    public static void register() {		registerBlock(DENSE_RTG_URANIUM, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[0]*64, 5, "RF/t")));
+        rtg_uranium_dense = new BlockSimpleTile(SimpleTileType.RTG_URANIUM_DENSE);
+        rtg_plutonium_dense = new BlockSimpleTile(SimpleTileType.RTG_PLUTONIUM);
+        rtg_americium_dense = new BlockSimpleTile(SimpleTileType.RTG_AMERICIUM_DENSE);
+        rtg_californium_dense = new BlockSimpleTile(SimpleTileType.RTG_CALIFORNIUM_DENSE);*/
 
+
+        //spin = new BlockSpin("spin");
+    }
+
+    public static void register() {
+
+
+        registerBlock(rtg_uranium_compact, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[0] * 8, 5, "RF/t")));
+   /*     registerBlock(rtg_plutonium_compact, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[1]*8, 5, "RF/t")));
+        registerBlock(rtg_americium_compact, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[2]*8, 5, "RF/t")));
+        registerBlock(rtg_californium_compact, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[3]*8, 5, "RF/t")));
+
+        registerBlock(rtg_uranium_dense, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[0]*64, 5, "RF/t")));
+        registerBlock(rtg_plutonium_dense, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[1]*64, 5, "RF/t")));
+        registerBlock(rtg_americium_dense, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[2]*64, 5, "RF/t")));
+        registerBlock(rtg_californium_dense, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[3]*64, 5, "RF/t")));
+*/
+
+
+        //registerBlock(spin);
+    }
+
+    public static void registerRenders() {
+
+        registerRender(rtg_uranium_compact);
+     /*   registerRender(rtg_plutonium_compact);
+        registerRender(rtg_americium_compact);
+        registerRender(rtg_californium_compact);
+
+        registerRender(rtg_uranium_dense);
+        registerRender(rtg_plutonium_dense);
+        registerRender(rtg_americium_dense);
+        registerRender(rtg_californium_dense); */
 
 
     }
+    private static String infoLine(String name) {
+        return "tile." + reference.MOD_ID + "." + name + ".desc";
+    }
+
+    public static void registerBlock(Block block, String... info) {
+        ForgeRegistries.BLOCKS.register(block);
+        ForgeRegistries.ITEMS.register(new ItemBlocks(block, info).setRegistryName(block.getRegistryName()));
+    }
+
+    public static void registerBlock(Block block, TextFormatting fixedColor, String... info) {
+        ForgeRegistries.BLOCKS.register(block);
+        ForgeRegistries.ITEMS.register(new ItemBlocks(block, fixedColor, info).setRegistryName(block.getRegistryName()));
+    }
+
+    public static void registerBlock(Block block, TextFormatting fixedColor, String[] fixedTooltip, String... info) {
+        ForgeRegistries.BLOCKS.register(block);
+        ForgeRegistries.ITEMS.register(new ItemBlocks(block, fixedColor, fixedTooltip, info).setRegistryName(block.getRegistryName()));
+    }
+
+
+
+
+    public static void registerRender(Block block) {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+    }
+
+    public static void registerRender(Block block, int meta, String fileName) {
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(reference.MOD_ID, fileName), "inventory"));
+    }
+
 }

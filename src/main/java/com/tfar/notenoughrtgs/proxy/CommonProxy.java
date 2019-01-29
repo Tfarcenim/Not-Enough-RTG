@@ -9,7 +9,8 @@ public class CommonProxy {
     public void registerItemRenderer(Item item, int meta, String id){}
     public void preInit(FMLPreInitializationEvent preEvent) {
 
-
-        // Config instance
+        ModBlocks.init();
+        ModBlocks.register();
+        ModTiles.register();
 
     }}

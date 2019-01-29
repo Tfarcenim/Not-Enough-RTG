@@ -1,7 +1,5 @@
 package com.tfar.notenoughrtgs;
 
-import com.tfar.notenoughrtgs.init.ModBlocks;
-import com.tfar.notenoughrtgs.init.ModTiles;
 import com.tfar.notenoughrtgs.proxy.CommonProxy;
 import com.tfar.notenoughrtgs.util.reference;
 import net.minecraftforge.fml.common.Mod;
@@ -22,8 +20,7 @@ public class Main {
     public static Logger logger;
 
     @EventHandler
-    public static void PreInit(FMLPreInitializationEvent event) {        ModBlocks.register();
-    ModTiles.register();}
+    public static void PreInit(FMLPreInitializationEvent event) {}
 
 
     @EventHandler

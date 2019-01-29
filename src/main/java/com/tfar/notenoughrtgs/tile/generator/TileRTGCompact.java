@@ -7,6 +7,7 @@ import nc.tile.generator.TileRTG;
 
 public class TileRTGCompact extends TileRTG {
 
+
     public static class UraniumCompact extends TileRTGCompact {
 
         public UraniumCompact() {
