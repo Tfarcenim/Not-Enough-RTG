@@ -35,8 +35,6 @@ public class ModBlocks {
     public static Block rtg_californium_dense; */
 
 
-    //public static Block spin;
-
     public static void init() {
 
         rtg_uranium_compact = new BlockSimpleTile(SimpleTileType.RTG_URANIUM_COMPACT);
@@ -51,8 +49,6 @@ public class ModBlocks {
         rtg_americium_dense = new BlockSimpleTile(SimpleTileType.RTG_AMERICIUM_DENSE);
         rtg_californium_dense = new BlockSimpleTile(SimpleTileType.RTG_CALIFORNIUM_DENSE);*/
 
-
-        //spin = new BlockSpin("spin");
     }
 
     public static void register() {
@@ -69,8 +65,6 @@ public class ModBlocks {
         registerBlock(rtg_californium_dense, InfoHelper.formattedInfo(infoLine("rtg"), UnitHelper.prefix(NCConfig.rtg_power[3]*64, 5, "RF/t")));
 */
 
-
-        //registerBlock(spin);
     }
 
     public static void registerRenders() {
