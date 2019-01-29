@@ -5,8 +5,6 @@ import com.tfar.notenoughrtgs.util.reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
@@ -22,13 +20,4 @@ public class Main {
     @EventHandler
     public void PreInit(FMLPreInitializationEvent preEvent) {		proxy.preInit(preEvent);}
 
-
-    @EventHandler
-    public static void init(FMLInitializationEvent event) {
-
-    }
-    @EventHandler
-    public static void Postinit(FMLPostInitializationEvent event) {
-
-    }
 }

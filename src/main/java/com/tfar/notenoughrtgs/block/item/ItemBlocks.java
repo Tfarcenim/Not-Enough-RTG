@@ -28,10 +28,6 @@ public class ItemBlocks extends ItemBlock {
         info = InfoHelper.buildInfo(block.getUnlocalizedName(), tooltip);
     }
 
-    public ItemBlocks(Block block, TextFormatting fixedColor, String... tooltip) {
-        this(block, fixedColor, InfoHelper.EMPTY_ARRAY, tooltip);
-    }
-
     public ItemBlocks(Block block, String[] fixedTooltip, String... tooltip) {
         this(block, TextFormatting.AQUA, fixedTooltip, tooltip);
     }

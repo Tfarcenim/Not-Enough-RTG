@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "notenoughrtgs",
+  "name": "Not Enough RTGs,
+  "description": "Adds additional RTGs to Nuclearcraft.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Tfarecnim"],
+  "credits": "To Tom for helping me make this",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
