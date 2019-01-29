@@ -1,4 +1,4 @@
-package com.tfar.notenoughrtgs.Item;
+package com.tfar.notenoughrtgs.item;
 
 
         import java.util.List;
@@ -8,7 +8,6 @@ package com.tfar.notenoughrtgs.Item;
         import com.tfar.notenoughrtgs.util.reference;
         import nc.util.InfoHelper;
         import net.minecraft.client.util.ITooltipFlag;
-        import net.minecraft.entity.player.EntityPlayer;
         import net.minecraft.item.Item;
         import net.minecraft.item.ItemStack;
         import net.minecraft.util.ActionResult;
@@ -19,13 +18,13 @@ package com.tfar.notenoughrtgs.Item;
         import net.minecraftforge.fml.relauncher.Side;
         import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class Items extends Item {
+public class ModItems extends Item {
 
     public final TextFormatting fixedColor;
     public final String[] fixedInfo;
     public final String[] info;
 
-    public Items(String nameIn, TextFormatting fixedColor, String[] fixedTooltip, String... tooltip) {
+    public ModItems(String nameIn, TextFormatting fixedColor, String[] fixedTooltip, String... tooltip) {
         setUnlocalizedName(reference.MOD_ID + "." + nameIn);
         setRegistryName(new ResourceLocation(reference.MOD_ID, nameIn));
         this.fixedColor = fixedColor;
@@ -33,15 +32,15 @@ public class Items extends Item {
         info = InfoHelper.buildInfo(getUnlocalizedName(), tooltip);
     }
 
-    public Items(String nameIn, TextFormatting fixedColor, String... tooltip) {
+    public ModItems(String nameIn, TextFormatting fixedColor, String... tooltip) {
         this(nameIn, fixedColor, InfoHelper.EMPTY_ARRAY, tooltip);
     }
 
-    public Items(String nameIn, String[] fixedTooltip, String... tooltip) {
+    public ModItems(String nameIn, String[] fixedTooltip, String... tooltip) {
         this(nameIn, TextFormatting.AQUA, fixedTooltip, tooltip);
     }
 
-    public Items(String nameIn, String... tooltip) {
+    public ModItems(String nameIn, String... tooltip) {
         this(nameIn, InfoHelper.EMPTY_ARRAY, tooltip);
     }
 
@@ -54,19 +53,5 @@ public class Items extends Item {
 
     protected ActionResult<ItemStack> actionResult(boolean success, ItemStack stack) {
         return new ActionResult<ItemStack>(success ? EnumActionResult.SUCCESS : EnumActionResult.FAIL, stack);
-    }
-
-    protected boolean isStackOnHotbar(ItemStack itemStack, EntityPlayer player) {
-        for (ItemStack hotbarStack : player.inventory.mainInventory.subList(0, 9)) {
-            if (itemStack.isItemEqual(hotbarStack)) return true;
-        }
-        return false;
-    }
-
-    protected boolean isStackInInventory(ItemStack itemStack, EntityPlayer player) {
-        for (ItemStack hotbarStack : player.inventory.mainInventory) {
-            if (itemStack.isItemEqual(hotbarStack)) return true;
-        }
-        return false;
     }
 }
