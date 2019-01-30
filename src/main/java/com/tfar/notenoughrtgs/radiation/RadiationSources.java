@@ -1,6 +1,7 @@
 package com.tfar.notenoughrtgs.radiation;
 
 import com.tfar.notenoughrtgs.init.ModBlocks;
+import nc.util.ItemInfo;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import nc.radiation.RadSources;
@@ -10,6 +11,8 @@ import static nc.radiation.RadSources.STACK_MAP;
 public class RadiationSources {
 
     private static void addToStackMap(ItemStack stack, Double radiation) {
+        STACK_MAP.put(new ItemInfo(stack), radiation);
+
     }
 
     public static void init2() {
