@@ -16,7 +16,7 @@ public class CommonProxy {
 
     }
     public void Init(FMLInitializationEvent event) {
-        RadiationSources.init();
+        RadiationSources.init2();
     }
     public void postInit(FMLPostInitializationEvent postEvent) {
 

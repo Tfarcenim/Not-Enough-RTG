@@ -1,16 +1,18 @@
 package com.tfar.notenoughrtgs.radiation;
 
 import com.tfar.notenoughrtgs.init.ModBlocks;
-import nc.radiation.RadSources;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import nc.radiation.RadSources;
+import static nc.radiation.RadSources.STACK_MAP;
+
 
 public class RadiationSources {
 
     private static void addToStackMap(ItemStack stack, Double radiation) {
     }
 
-    public static void init() {
+    public static void init2() {
         put(RadSources.URANIUM_238 / 4D * 8, ModBlocks.rtg_uranium_compact);
         put(RadSources.PLUTONIUM_238 / 4D * 8, ModBlocks.rtg_plutonium_compact);
         put(RadSources.AMERICIUM_241 / 4D * 8, ModBlocks.rtg_americium_compact);
