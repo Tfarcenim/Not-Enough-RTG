@@ -9,3 +9,5 @@ tile.notenoughrtgs.rtg_americium_dense.name=Dense Americium RTG
 tile.notenoughrtgs.rtg_californium_dense.name=Dense Californium RTG
 
 tile.notenoughrtgs.rtg.desc=Produces %s constantly.
+
+item.notenoughrtgs.rads=Radiation:
