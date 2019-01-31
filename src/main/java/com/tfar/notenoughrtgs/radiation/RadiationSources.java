@@ -12,7 +12,6 @@ public class RadiationSources {
 
     private static void addToStackMap(ItemStack stack, Double radiation) {
         STACK_MAP.put(new ItemInfo(stack), radiation);
-
     }
 
     public static void init2() {
