@@ -9,8 +9,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IStringSerializable;
 public class BlockEnums {
 
-
-
     public enum SimpleTileType implements IStringSerializable {
 
         RTG_URANIUM_COMPACT("rtg_uranium_compact", NCTabs.MACHINES),
@@ -59,7 +57,6 @@ public class BlockEnums {
                 default:
                     return null;
             }}
-
 
         public CreativeTabs getTab() {
             return tab;

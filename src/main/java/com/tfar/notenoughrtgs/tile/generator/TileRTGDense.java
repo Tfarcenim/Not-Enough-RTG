@@ -11,28 +11,28 @@ public class TileRTGDense extends TileRTG {
     public static class UraniumDense extends TileRTGDense {
 
         public UraniumDense() {
-            super(NCConfig.rtg_power[0]*64, RadSources.URANIUM_238*64/4D);
+            super(NCConfig.rtg_power[0]*64, RadSources.URANIUM_238*8);
         }
     }
 
     public static class PlutoniumDense extends TileRTGDense {
 
         public PlutoniumDense() {
-            super(NCConfig.rtg_power[1]*64, RadSources.PLUTONIUM_238*64/4D);
+            super(NCConfig.rtg_power[1]*64, RadSources.PLUTONIUM_238*8);
         }
     }
 
     public static class AmericiumDense extends TileRTGDense {
 
         public AmericiumDense() {
-            super(NCConfig.rtg_power[2]*64, RadSources.AMERICIUM_241*64/4D);
+            super(NCConfig.rtg_power[2]*64, RadSources.AMERICIUM_241*8);
         }
     }
 
     public static class CaliforniumDense extends TileRTGDense {
 
         public CaliforniumDense() {
-            super(NCConfig.rtg_power[3]*64, RadSources.CALIFORNIUM_250*64/4D);
+            super(NCConfig.rtg_power[3]*64, RadSources.CALIFORNIUM_250*8);
         }
     }
 

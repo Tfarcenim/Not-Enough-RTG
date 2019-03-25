@@ -4,7 +4,6 @@ import com.tfar.notenoughrtgs.init.ModBlocks;
 import com.tfar.notenoughrtgs.init.ModTiles;
 import com.tfar.notenoughrtgs.radiation.RadiationSources;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy {
@@ -17,8 +16,5 @@ public class CommonProxy {
     }
     public void Init(FMLInitializationEvent event) {
         RadiationSources.init2();
-    }
-    public void postInit(FMLPostInitializationEvent postEvent) {
-
     }
 }
