@@ -1,12 +1,12 @@
 [
 {
   "modid": "notenoughrtgs",
-  "name": "Not Enough RTGs,
+  "name": "Not Enough RTGs",
   "description": "Adds additional RTGs to Nuclearcraft.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
-  "updateUrl": "",
+  "updateUrl": "https://github.com/Tfarcenim/Not-Enough-RTG",
   "authorList": ["Tfarecnim"],
   "credits": "To Tom for helping me make this",
   "logoFile": "",

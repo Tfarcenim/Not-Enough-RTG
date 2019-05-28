@@ -24,8 +24,8 @@ public class ItemBlocks extends ItemBlock {
     public ItemBlocks(Block block, TextFormatting fixedColor, String[] fixedTooltip, String... tooltip) {
         super(block);
         this.fixedColor = fixedColor;
-        fixedInfo = InfoHelper.buildFixedInfo(block.getUnlocalizedName(), fixedTooltip);
-        info = InfoHelper.buildInfo(block.getUnlocalizedName(), tooltip);
+        fixedInfo = InfoHelper.buildFixedInfo(block.getTranslationKey(), fixedTooltip);
+        info = InfoHelper.buildInfo(block.getTranslationKey(), tooltip);
     }
 
     public ItemBlocks(Block block, String[] fixedTooltip, String... tooltip) {

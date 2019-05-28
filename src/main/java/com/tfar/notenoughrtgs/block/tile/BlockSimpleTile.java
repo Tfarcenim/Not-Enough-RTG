@@ -10,7 +10,7 @@ import net.minecraft.world.World;
         private final SimpleTileType type;
 
         public BlockSimpleTile(SimpleTileType type) {
-            super(type.getName(), Material.IRON);
+            super(Material.IRON);
             this.type = type;
             setCreativeTab(type.getTab());
         }
