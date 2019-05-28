@@ -27,8 +27,6 @@ public abstract class BlockTile extends BlockBase implements ITileEntityProvider
         world.setBlockToAir(pos);
     }
 
-
-
     @Override
     public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int id, int param) {
         super.eventReceived(state, worldIn, pos, id, param);
