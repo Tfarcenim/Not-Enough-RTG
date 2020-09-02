@@ -40,14 +40,4 @@ public class TileRTGDense extends TileRTG {
         super(power, radiation);
         getRadiationSource().setRadiationLevel(radiation);
     }
-
-    @Override
-    public int getGenerated() {
-        return power;
-    }
-
-    @Override
-    public boolean shouldSaveRadiation() {
-        return false;
-    }
 }

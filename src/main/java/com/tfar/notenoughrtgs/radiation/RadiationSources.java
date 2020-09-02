@@ -8,7 +8,6 @@ import static nc.radiation.RadSources.put;
 public class RadiationSources {
 
     public static void init() {
-
         put(RadSources.URANIUM_238, NotEnoughRTGs.MOD_BLOCKS.get(0));
         put(RadSources.PLUTONIUM_238, NotEnoughRTGs.MOD_BLOCKS.get(1));
         put(RadSources.AMERICIUM_241, NotEnoughRTGs.MOD_BLOCKS.get(2));

@@ -37,16 +37,5 @@ public class TileRTGCompact extends TileRTG {
 
     public TileRTGCompact(int power, double radiation) {
         super(power, radiation);
-        getRadiationSource().setRadiationLevel(radiation);
-    }
-
-    @Override
-    public int getGenerated() {
-        return power;
-    }
-
-    @Override
-    public boolean shouldSaveRadiation() {
-        return false;
     }
 }

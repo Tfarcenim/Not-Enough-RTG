@@ -1,10 +1,10 @@
 package com.tfar.notenoughrtgs.init;
 
-import com.tfar.notenoughrtgs.util.Global;
+import com.tfar.notenoughrtgs.NotEnoughRTGs;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-@GameRegistry.ObjectHolder(value = Global.MOD_ID)
+@GameRegistry.ObjectHolder(value = NotEnoughRTGs.MOD_ID)
 public class ObjectHolders {
 
   public static Block rtg_uranium_compact;

@@ -1,23 +1,23 @@
 package com.tfar.notenoughrtgs.block.tile;
 
-import com.tfar.notenoughrtgs.enums.BlockEnums.SimpleTileType;
+import nc.block.tile.BlockTile;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-    public class BlockSimpleTile extends BlockTile {
+import java.util.function.Supplier;
 
-        private final SimpleTileType type;
+public class BlockSimpleTile extends BlockTile {
 
-        public BlockSimpleTile(SimpleTileType type) {
-            super(Material.IRON);
-            this.type = type;
-            setCreativeTab(type.getTab());
-        }
+	private final Supplier<TileEntity> type;
 
-        @Override
-        public TileEntity createNewTileEntity(World world, int meta) {
-            return type.getTile();
-        }
+	public BlockSimpleTile(Supplier<TileEntity> type) {
+		super(Material.IRON);
+		this.type = type;
+	}
 
-    }
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		return type.get();
+	}
+}
