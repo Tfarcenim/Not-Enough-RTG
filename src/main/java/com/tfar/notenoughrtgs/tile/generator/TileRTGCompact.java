@@ -1,8 +1,8 @@
 package com.tfar.notenoughrtgs.tile.generator;
 
 import nc.config.NCConfig;
+import nc.multiblock.rtg.tile.TileRTG;
 import nc.radiation.RadSources;
-import nc.tile.generator.TileRTG;
 
 
 public class TileRTGCompact extends TileRTG {

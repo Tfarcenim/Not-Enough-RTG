@@ -1,18 +1,18 @@
 package com.tfar.notenoughrtgs;
 
-import com.tfar.notenoughrtgs.block.item.ItemBlocks;
 import com.tfar.notenoughrtgs.block.tile.BlockSimpleTile;
-import com.tfar.notenoughrtgs.radiation.RadiationSources;
 import com.tfar.notenoughrtgs.tile.generator.TileRTGCompact;
 import com.tfar.notenoughrtgs.tile.generator.TileRTGDense;
-import com.tfar.notenoughrtgs.util.Global;
+import nc.block.item.NCItemBlock;
 import nc.config.NCConfig;
+import nc.radiation.RadSources;
 import nc.util.InfoHelper;
 import nc.util.UnitHelper;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -26,27 +26,41 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
+import static nc.radiation.RadSources.put;
+
 @Mod.EventBusSubscriber
-@Mod(modid = NotEnoughRTGs.MOD_ID, name = Global.NAME, version = Global.VERSION,
-        dependencies = Global.DEPENDENCIES, acceptedMinecraftVersions = Global.MC_VERSION)
+@Mod(modid = NotEnoughRTGs.MOD_ID, name = NotEnoughRTGs.NAME, version = NotEnoughRTGs.VERSION,
+        dependencies = NotEnoughRTGs.DEPENDENCIES, acceptedMinecraftVersions = NotEnoughRTGs.MC_VERSION)
 public class NotEnoughRTGs {
 
   public static final List<Block> MOD_BLOCKS = new ArrayList<>();
   public static final String MOD_ID = "notenoughrtgs";
+  public static final String NAME = "Not Enough RTGs";
+  public static final String VERSION = "1.2";
+  public static final String MC_VERSION = "1.12.2,";
+  public static final String DEPENDENCIES = "required-after:nuclearcraft;";
 
   @EventHandler
   public void init(FMLInitializationEvent event) {
 
-    GameRegistry.registerTileEntity(TileRTGCompact.UraniumCompact.class, NotEnoughRTGs.MOD_ID + ":rtg_uranium_compact");
-    GameRegistry.registerTileEntity(TileRTGCompact.PlutoniumCompact.class, NotEnoughRTGs.MOD_ID + ":rtg_plutonium_compact");
-    GameRegistry.registerTileEntity(TileRTGCompact.AmericiumCompact.class, NotEnoughRTGs.MOD_ID + ":rtg_americium_compact");
-    GameRegistry.registerTileEntity(TileRTGCompact.CaliforniumCompact.class, NotEnoughRTGs.MOD_ID + ":rtg_californium_compact");
-    GameRegistry.registerTileEntity(TileRTGDense.UraniumDense.class, NotEnoughRTGs.MOD_ID + ":rtg_uranium_dense");
-    GameRegistry.registerTileEntity(TileRTGDense.PlutoniumDense.class, NotEnoughRTGs.MOD_ID + ":rtg_plutonium_dense");
-    GameRegistry.registerTileEntity(TileRTGDense.AmericiumDense.class, NotEnoughRTGs.MOD_ID + ":rtg_americium_dense");
-    GameRegistry.registerTileEntity(TileRTGDense.CaliforniumDense.class, NotEnoughRTGs.MOD_ID + ":rtg_californium_dense");
+    GameRegistry.registerTileEntity(TileRTGCompact.UraniumCompact.class, new ResourceLocation(NotEnoughRTGs.MOD_ID, ":rtg_uranium_compact"));
+    GameRegistry.registerTileEntity(TileRTGCompact.PlutoniumCompact.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_plutonium_compact"));
+    GameRegistry.registerTileEntity(TileRTGCompact.AmericiumCompact.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_americium_compact"));
+    GameRegistry.registerTileEntity(TileRTGCompact.CaliforniumCompact.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_californium_compact"));
+    GameRegistry.registerTileEntity(TileRTGDense.UraniumDense.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_uranium_dense"));
+    GameRegistry.registerTileEntity(TileRTGDense.PlutoniumDense.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_plutonium_dense"));
+    GameRegistry.registerTileEntity(TileRTGDense.AmericiumDense.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_americium_dense"));
+    GameRegistry.registerTileEntity(TileRTGDense.CaliforniumDense.class, new ResourceLocation(NotEnoughRTGs.MOD_ID , ":rtg_californium_dense"));
 
-    RadiationSources.init();
+    put(RadSources.URANIUM_238, NotEnoughRTGs.MOD_BLOCKS.get(0));
+    put(RadSources.PLUTONIUM_238, NotEnoughRTGs.MOD_BLOCKS.get(1));
+    put(RadSources.AMERICIUM_241, NotEnoughRTGs.MOD_BLOCKS.get(2));
+    put(RadSources.CALIFORNIUM_250, NotEnoughRTGs.MOD_BLOCKS.get(3));
+
+    put(RadSources.URANIUM_238 * 8, NotEnoughRTGs.MOD_BLOCKS.get(4));
+    put(RadSources.PLUTONIUM_238 * 8, NotEnoughRTGs.MOD_BLOCKS.get(5));
+    put(RadSources.AMERICIUM_241 * 8, NotEnoughRTGs.MOD_BLOCKS.get(6));
+    put(RadSources.CALIFORNIUM_250 * 8, NotEnoughRTGs.MOD_BLOCKS.get(7));
   }
 
   @SubscribeEvent
@@ -89,7 +103,7 @@ public class NotEnoughRTGs {
   }
 
   private static void registerItem(Block block, IForgeRegistry<Item> registry, String... info) {
-    ItemBlock itemBlock = new ItemBlocks(block, info);
+    ItemBlock itemBlock = new NCItemBlock(block, info);
     itemBlock.setRegistryName(block.getRegistryName());
     registry.register(itemBlock);
   }
@@ -97,10 +111,10 @@ public class NotEnoughRTGs {
   @SubscribeEvent
   public static void registerModels(ModelRegistryEvent event) {
     for (Block block : MOD_BLOCKS)
-      helper3(Item.getItemFromBlock(block));
+      registerItemModel(Item.getItemFromBlock(block));
   }
 
-  private static void helper3(Item item) {
+  private static void registerItemModel(Item item) {
     ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
   }
 }

@@ -38,7 +38,7 @@ repositories {
     }
     dependencies {
         
-        deobfCompile "nuclearcraft-mod:NuclearCraft:2.18x:1.12.2"
+        deobfCompile "nuclearcraft-overhauled:NuclearCraft:2o.3.6:1.12.2"
         
         compile group: "net.industrial-craft", name: "industrialcraft-2", version: "2.8.99-ex112", classifier: "api"
 
